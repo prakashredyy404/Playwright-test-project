@@ -1,0 +1,36 @@
+{
+  "name": "cucumber_playwright",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "reports": "npx playwright show-report",
+    "sample": "--require features/support/hooks.js --format allure-cucumberjs/reporter",
+    "test:chromium": "cross-env BROWSER=chromium ALLURE_RESULTS_DIR=allure-results/chrome npx cucumber-js --exit   --retry 2 --parallel 2 --format html:cucumber-reports.html",
+    "test:firefox": "cross-env BROWSER=firefox ALLURE_RESULTS_DIR=allure-results/firefox npx cucumber-js --exit --retry 1 --parallel 2 --format html:cucumber-reports.html",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cucumber": "npx cucumber-js --exit --retry 1 --parallel 2 --format html:cucumber-reports.html",
+    "test:edge": "cross-env BROWSER=edge ALLURE_RESULTS_DIR=allure-results/edge npx cucumber-js --exit --retry 1 --parallel 1 --format html:cucumber-reports.html",
+    "test:webkit": "cross-env BROWSER=webkit ALLURE_RESULTS_DIR=allure-results/webkit npx cucumber-js --exit --retry 1 --parallel 2 --format html:cucumber-reports.html",
+    "test:all": "npm-run-all --parallel test:chromium test:firefox test:webkit ",
+    "report:all": "allure generate allure-results/chromium --clean -o allure-report/chromium && allure generate allure-results/firefox --clean -o allure-report/firefox && allure generate allure-results/webkit --clean -o allure-report/webkit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cucumber": "^6.0.7",
+    "exceljs": "^4.4.0",
+    "fs-extra": "^11.3.2",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
+    "@playwright/test": "^1.56.0",
+    "@testomatio/reporter": "^1.6.17",
+    "cross-env": "^10.1.0",
+    "npm-run-all": "^4.1.5",
+    "playwright": "^1.56.0"
+  },
+  "description": ""
+}
