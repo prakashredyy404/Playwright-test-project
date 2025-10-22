@@ -27,4 +27,10 @@ tejaInstance.setpassword('newPassword');
 
 // // Verify the values using the getters:
 console.log(tejaInstance.getId()); // Output: newId
-console.log(tejaInstance.getpassword()); // Output: newPassword
+//sample change in playwright program
+console.log(tejaInstance.getpassword());
+console.log(tejaInstance.getpassword());
+console.log(tejaInstance.getpassword());
+console.log(tejaInstance.getpassword());
+console.log(tejaInstance.getpassword());
+ // Output: newPasswordconsole.log(tejaInstance.getpassword());
